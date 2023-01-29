@@ -1,0 +1,53 @@
+Colores:
+-Negro
+-Blanco
+-Azul -> 2e3f93
+-Morado -> 6a3db9
+
+3 categorías:
+-Colorido
+-Minimalista
+-Anime
+
+Estilo de pagina: similar a los videos
+
+
+Secciones:
+-Acerca de
+-Contactanos
+-Tienda
+-Home
+-Personalizar(mirar R.Funcionales)
+-Register (Tipo usuario comprador y administrador)
+-Login
+
+Requisitos funcionales:
+-Pagina con base de datos, que pueda almacenar los posteos.
+-Base de datos con usuarios tanto administadores como clientes
+-que se pueda postear la información de los productos, sin necesidad de acceder al codigo fuente para poder mostrarse.
+-Administrador podrá ver todos los productos publicados.
+-Administrador podrá publicar productos(imagen, descripción, precio)
+-administrador podrá llevar registro de compradores
+-administrador podrá, llevar conteo de cuantos usuarios compraron un producto
+-Administrador podrá ver cuantos pedidos hay de un producto
+-Administrador podrá ver cuantas unidades hay de un producto
+-Administrador podrá tener tablero para llevar seguimiento de las compras (pagadas, por atender, enviada, recibida)
+-Administrador tendrá sección para visualizar los archivos enviados de personalización de diseños
+.
+.
+.
+-Usuario podrá ver los productos publicados por el administrador
+-Usuario podrá ver los precios de cada producto
+-Usuario podrá ver el producto con sus descripciones y la cantidad de disponibles que hay
+-Usuario podrá ver los productos sin ser loggeado
+-Usuario podrá comprar solo si se ha loggeado
+-Usuario podrá loggearse con correo google
+-Usuario podrá aceder a pestaña "personalizar" solo cuando se loggee
+
+-Pestaña personalizar tendrá plantillas descargables para que usuarios hagan sus propios diseños (frente, mangas y espalda) 
+-Pestaña personalizar tendrá cuadro para subir la imagen del diseño realizado
+-Usuario podrá enviar los diseños
+
+* En la compra::
+-Usuario podrá llenar datos como (Nombres, correo, Celular, Dirección)
+-Usuario tendrá 3 posibles opciones de elección de regalo(Amigurimi, pines, Manilla)
