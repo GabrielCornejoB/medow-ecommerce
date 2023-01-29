@@ -11,7 +11,8 @@ let app = express();
 let port = process.env.PORT || 4201;
 
 // Connect to DB
-mongoose.connect('mongodb://127.0.0.1:27017/shop', (err, res) =>{
+mongoose.set('strictQuery', true);
+mongoose.connect('mongodb://127.0.0.1:27017/shop', {useUnifiedTopology: true, useNewUrlParser: true}, (err, res) =>{
     if(err) console.log(err);
     else {
         app.listen(port, function() {
