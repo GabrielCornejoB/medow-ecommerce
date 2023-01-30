@@ -1,6 +1,7 @@
 'use strict'
 
 let bcrypt = require('bcrypt-nodejs');
+// let jwt = require('./jwt.helper');
 
 exports.login = async function(userType, req, res) {
     let data = req.body;
