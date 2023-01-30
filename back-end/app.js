@@ -6,6 +6,7 @@ let bodyparser = require('body-parser');
 let mongoose = require('mongoose');
 let customerRoute = require('./routes/customer.route');
 let adminRoute = require('./routes/admin.route');
+let testRoute = require('./routes/test.route');
 
 // Initialize app
 let app = express();
@@ -38,5 +39,6 @@ app.use((req, res, next) => {
 // Defines our API
 app.use('/api', customerRoute);
 app.use('/api', adminRoute);
+app.use('/api', testRoute);
 
 module.exports = app;
