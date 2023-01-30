@@ -31,6 +31,34 @@ const customerRegister = async function(req, res) {
     }
 }
 
+const customerLogin = async function(req, res) {
+    let data = req.body;
+
+    let customerList = [];
+
+    customerList = await customer.find({email: data.email});
+
+    if (customerList.length == 0) {
+        res.status(200).send({message: "E-mail not found", data: undefined});
+    }
+    else {
+        let user = customerList[0];
+
+        bcrypt.compare(data.password, user.password, async function(err, check) {
+            if (check) {
+                res.status(200).send({
+                    data: user,
+                    token: jwt.createToken(user)
+                });
+            }
+            else {
+                res.status(200).send({message: "Incorrect password", data: undefined});
+            }
+        });
+    }
+}
+
 module.exports = {
-    customerRegister
+    customerRegister,
+    customerLogin
 }

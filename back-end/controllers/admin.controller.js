@@ -2,7 +2,10 @@
 
 let admin = require('../models/admin.model');
 let bcrypt = require('bcrypt-nodejs');
+let jwt = require('../helpers/jwt.helper');
 
+
+// Buscar forma de no copiar y pegar codigo en registro de admins y de customers
 const adminRegister = async function(req, res) {
     let data = req.body;
     let adminsList = [];
@@ -31,6 +34,34 @@ const adminRegister = async function(req, res) {
     }
 }
 
+const adminLogin = async function(req, res) {
+    let data = req.body;
+
+    let adminList = [];
+
+    adminList = await admin.find({email: data.email});
+
+    if (adminList.length == 0) {
+        res.status(200).send({message: "E-mail not found", data: undefined});
+    }
+    else {
+        let user = adminList[0];
+
+        bcrypt.compare(data.password, user.password, async function(err, check) {
+            if (check) {
+                res.status(200).send({
+                    data: user,
+                    token: jwt.createToken(user)
+                });
+            }
+            else {
+                res.status(200).send({message: "Incorrect password", data: undefined});
+            }
+        });
+    }
+}
+
 module.exports = {
-    adminRegister
+    adminRegister,
+    adminLogin
 }
