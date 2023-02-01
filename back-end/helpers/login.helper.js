@@ -1,7 +1,7 @@
 'use strict'
 
 let bcrypt = require('bcrypt-nodejs');
-// let jwt = require('./jwt.helper');
+let jwt = require('./jwt.helper');
 
 exports.login = async function(userType, req, res) {
     let data = req.body;
@@ -19,8 +19,8 @@ exports.login = async function(userType, req, res) {
         bcrypt.compare(data.password, user.password, async function(err, check) {
             if (check) {
                 res.status(200).send({
-                    data: user
-                    // token: jwt.createToken(user)
+                    data: user,
+                    token: jwt.createToken(user)
                 });
             }
             else {

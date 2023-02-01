@@ -10,8 +10,8 @@ exports.createToken = function(user){
         name: user.name,
         lastName: user.lastName,
         email: user.email,
-        iat: moment().unix(),
-        exp: moment().add(7, 'days').unix()
+        iat: moment().unix(),                       // Generation Date
+        exp: moment().add(7, 'days').unix()         // Expiring date
     }
 
     return jwt.encode(payload, secret);
