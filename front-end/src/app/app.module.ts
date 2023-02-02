@@ -7,6 +7,10 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StoreComponent } from './components/store/store.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { CustomizeComponent } from './components/customize/customize.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { StoreComponent } from './components/store/store.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    StoreComponent
+    StoreComponent,
+    AboutComponent,
+    ContactComponent,
+    CustomizeComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
