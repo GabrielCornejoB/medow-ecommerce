@@ -13,6 +13,11 @@
 .navigation a:hover {
     opacity: 50%;
 }
+.nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .footer {
     background-color: var(--black);
     height: 200px;
