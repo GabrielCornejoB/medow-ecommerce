@@ -1,0 +1,19 @@
+.welcome-image {
+    height: 940px;
+    background-color: var(--blue);
+}
+.categories {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5px;
+    height: 720px;
+}
+.category {
+    background-color: var(--black);
+    opacity: 25%;
+    margin: 5px 0;
+}
+.footer {
+    background-color: var(--black);
+    height: 200px;
+}
