@@ -13,3 +13,7 @@
 .navigation a:hover {
     opacity: 50%;
 }
+.footer {
+    background-color: var(--black);
+    height: 200px;
+}
