@@ -9,7 +9,22 @@
     height: 720px;
 }
 .category {
-    background-color: var(--black);
-    opacity: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.category:hover {
+    opacity: 75%;
+}
+.category p {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: black;
+    border: white solid;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
 }
