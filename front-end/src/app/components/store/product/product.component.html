@@ -1,5 +1,5 @@
 <div class="product-wrapper">
-    <img [src]="product.imageURL" [alt]="product.imageURL" width="350px" height="450px">
+    <img class="product-image" [src]="product.imageURL" [alt]="product.imageURL" width="350px" height="450px">
     <div class="product-details">
         <p>{{ product.description }} ({{ product.category }})</p>
         <p>{{ product.price | currency : 'USD' : 'symbol' : '1.0-0' }}</p>

@@ -5,6 +5,13 @@
     width: 350px;
     border-radius: 5px;
 }
+.product-image {
+    transition: 0.4s;
+    cursor: pointer;
+}
+.product-image:hover {
+    opacity: 90%;
+}
 .product-details {
     display: flex;
     flex-direction: column;
