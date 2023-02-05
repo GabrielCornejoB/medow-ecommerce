@@ -10,6 +10,14 @@
                 <input type="password" id="password" name="password" [(ngModel)]="userLogin.password" required>
                 <label for="">contraseña</label>
             </div>
+            <div *ngIf="invalidEmail" class="error-msg">
+                <p>Correo no registrado</p>
+                <p (click)="invalidEmail = !invalidEmail"><span class="material-symbols-outlined">close</span></p>
+            </div>
+            <div *ngIf="incorrectPassword" class="error-msg">
+                <p>Contraseña incorrecta</p>
+                <p (click)="incorrectPassword = !incorrectPassword"><span class="material-symbols-outlined">close</span></p>
+            </div>
             <button type="submit">
                 Acceder
             </button>

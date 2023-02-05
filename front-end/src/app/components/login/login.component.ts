@@ -13,6 +13,8 @@ export class LoginComponent {
     email: '',
     password: ''
   };
+  invalidEmail: boolean = false;
+  incorrectPassword: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -20,10 +22,12 @@ export class LoginComponent {
     this.authService.login(this.userLogin).subscribe(
       res => {
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/store']);
+        this.router.navigate(['/']);
       },
       err => {
-        console.log(err);
+        if (err.error == "E-mail not registered") this.invalidEmail = true;
+        if (err.error == "Wrong password") this.incorrectPassword = true;
+        console.log(err.error);
       }
     ) 
   }

@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 703px;
+    height: 710px;
     background: linear-gradient(var(--blue), var(--purple));
 }
 .form-container {
@@ -77,4 +77,12 @@
 .form-container .register-link a {
     text-decoration: underline;
     color: turquoise;
+}
+.error-msg {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+}
+.error-msg p span {
+    cursor: pointer;
 }

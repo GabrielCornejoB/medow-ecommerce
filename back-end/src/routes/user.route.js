@@ -16,8 +16,8 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = await userModel.findOne({email: email});
 
-    if (!user) return res.status(401).send("E-mail not registered");
-    if (user.password != password) return res.status(401).send("Wrong password");
+    if (!user) return res.status(400).send("E-mail not registered");
+    if (user.password != password) return res.status(400).send("Wrong password");
 
     const token = jwt.sign({_id: user._id}, 'secret');
     return res.status(200).json({token});
