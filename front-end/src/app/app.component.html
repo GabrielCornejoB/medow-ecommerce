@@ -9,6 +9,9 @@
         <a routerLink="/cutomize">Customize</a>
     </div>
     <div class="nav-secondary-links nav-center">
+        <ng-container *ngIf="isAuthenticated()">
+            <button class="btn-logout" (click)="logout()"><span class="material-symbols-outlined nav-center">logout</span></button>
+        </ng-container>
         <a routerLink="/login"><span class="material-symbols-outlined nav-center">person</span></a>
         <a routerLink="/cart"><span class="material-symbols-outlined nav-center">shopping_bag</span></a>
     </div>

@@ -18,6 +18,13 @@
     align-items: center;
     justify-content: center;
 }
+.btn-logout {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 0 15px;
+}
 .footer {
     background-color: var(--black);
     height: 150px;

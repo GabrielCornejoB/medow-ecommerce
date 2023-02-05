@@ -9,6 +9,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StoreComponent } from './components/store/store.component';
 
+import { AuthGuard } from './auth.guard';
+
 const routes: Routes = [
   {path:"", component: HomeComponent},
   {path:"store", component: StoreComponent},
@@ -17,7 +19,7 @@ const routes: Routes = [
   {path:"cutomize", component: CustomizeComponent},
   {path:"login", component: LoginComponent},
   {path:"register", component: RegisterComponent},
-  {path:"cart", component: CartComponent}
+  {path:"cart", component: CartComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
