@@ -4,12 +4,12 @@ const userModel = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 
 router.post('/register', async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, name, lastName } = req.body;
 
     const userExists = await userModel.findOne({email: email});
     if(userExists) return res.status(400).send("E-mail already registered");
 
-    const newUser = new userModel({email, password});
+    const newUser = new userModel({email, password, name, lastName});
     await newUser.save();
 
     const token = jwt.sign({_id: newUser._id}, 'secret');

@@ -1,7 +1,15 @@
 <div class="register-wrapper">
     <div class="form-container">
         <h1>Registro</h1>
-        <form (submit)="register()">
+        <form (submit)="register()" #registerForm="ngForm">
+            <div class="register-row">
+                <input type="text" id="name" name="name" [(ngModel)]="userRegister.name" #name="ngModel" required>
+                <label >nombres</label>            
+            </div>
+            <div class="register-row">
+                <input type="text" id="lastName" name="lastName" [(ngModel)]="userRegister.lastName" required>
+                <label>apellidos</label>
+            </div>
             <div class="register-row">
                 <input type="text" id="email" name="email" [(ngModel)]="userRegister.email" required>
                 <label>e-mail</label>
@@ -22,7 +30,7 @@
                 <p>Correo ya existente</p>
                 <p (click)="existingEmail = !existingEmail"><span class="material-symbols-outlined">close</span></p>
             </div>
-            <button type="submit">
+            <button type="submit" [disabled]="registerForm.form.invalid">
                 Crear cuenta
             </button>
         </form>

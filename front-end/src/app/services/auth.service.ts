@@ -18,7 +18,7 @@ export class AuthService {
     return this.http.post<any>(this.URL + "/login", {email: loginForm.email, password: loginForm.password});
   }
   register(registerForm: RegisterForm) {
-    return this.http.post<any>(this.URL + '/register', {email: registerForm.email, password: registerForm.password});
+    return this.http.post<any>(this.URL + '/register', {email: registerForm.email, password: registerForm.password, name: registerForm.name, lastName: registerForm.lastName});
   }
   isLogged(): Boolean {
     return !!localStorage.getItem('token');

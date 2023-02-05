@@ -10,6 +10,8 @@ import { RegisterForm } from 'src/app/types/Auth';
 })
 export class RegisterComponent {
   userRegister: RegisterForm = {
+    name: '',
+    lastName: '',
     email: '',
     password: '',
     confirmPassword: ''
