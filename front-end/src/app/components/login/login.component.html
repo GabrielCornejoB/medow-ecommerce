@@ -1,18 +1,21 @@
 <div class="login-wrapper">
     <div class="form-container">
         <h1>Iniciar sesión</h1>
-        <form action="">
+        <form (submit)="login()">
             <div class="login-row">
-                <input type="text" required>
+                <input type="text" id="email" name="email" [(ngModel)]="userLogin.email" required>
                 <label>e-mail</label>
             </div>
             <div class="login-row">
-                <input type="password" required>
+                <input type="password" id="password" name="password" [(ngModel)]="userLogin.password" required>
                 <label for="">contraseña</label>
             </div>
             <button type="submit">
                 Acceder
             </button>
+            <div class="register-link">
+                <p>¿No tienes una cuenta? <a routerLink="/register">Registrate aqui</a></p>
+            </div>
         </form>
     </div>   
 </div>
