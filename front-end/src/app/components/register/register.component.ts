@@ -14,19 +14,23 @@ export class RegisterComponent {
     password: '',
     confirmPassword: ''
   }
+  existingEmail: boolean = false;
+  passwordMatched: boolean = true;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   register() {
-    this.authService.register(this.userRegister).subscribe(
-      res => {
-        console.log('siu');
-        localStorage.setItem('token', res.token);
-        this.router.navigate(['/about']);
-      },
-      err => {
-        console.log(err);
-      }
-    )
+    if (this.userRegister.password == this.userRegister.confirmPassword) {
+      this.authService.register(this.userRegister).subscribe(
+        res => {
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/about']);
+        },
+        err => {
+          if(err.error == "E-mail already registered") this.existingEmail = true;
+        }
+      )
+    }
+    else this.passwordMatched = false;
   }
 }

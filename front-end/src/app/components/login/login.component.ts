@@ -27,7 +27,6 @@ export class LoginComponent {
       err => {
         if (err.error == "E-mail not registered") this.invalidEmail = true;
         if (err.error == "Wrong password") this.incorrectPassword = true;
-        console.log(err.error);
       }
     ) 
   }

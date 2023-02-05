@@ -5,6 +5,10 @@ const jwt = require('jsonwebtoken');
 
 router.post('/register', async (req, res) => {
     const { email, password } = req.body;
+
+    const userExists = await userModel.findOne({email: email});
+    if(userExists) return res.status(400).send("E-mail already registered");
+
     const newUser = new userModel({email, password});
     await newUser.save();
 
