@@ -13,8 +13,13 @@ export class StoreComponent implements OnInit {
   products: Product[] = [];
 
   ngOnInit(): void {
-    this.products = this.productsService.getProducts();
+    this.productsService.getProducts().subscribe(
+      res => {
+        this.products = res;
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
-
-  
 }

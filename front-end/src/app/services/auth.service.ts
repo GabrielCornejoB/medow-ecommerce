@@ -14,11 +14,11 @@ export class AuthService {
 
   }
 
-  login(user: LoginForm) {
-    return this.http.post<any>(this.URL + "/login", user);
+  login(loginForm: LoginForm) {
+    return this.http.post<any>(this.URL + "/login", {email: loginForm.email, password: loginForm.password});
   }
-  register(user: RegisterForm) {
-    return this.http.post<any>(this.URL + '/register', user);
+  register(registerForm: RegisterForm) {
+    return this.http.post<any>(this.URL + '/register', {email: registerForm.email, password: registerForm.password});
   }
   isLogged(): Boolean {
     return !!localStorage.getItem('token');
