@@ -1,9 +1,22 @@
 <div class="register-wrapper">
-    <h2>Register</h2>
-    <div class="register-form-container">
-        <form >
-            <input type="text" name="email" placeholder="e-mail" required>
-            <input type="text" name="password" placeholder="password" required>
+    <div class="form-container">
+        <h1>Registro</h1>
+        <form (submit)="register()">
+            <div class="register-row">
+                <input type="text" id="email" name="email" [(ngModel)]="userRegister.email" required>
+                <label>e-mail</label>
+            </div>
+            <div class="register-row">
+                <input type="password" id="password" name="password" [(ngModel)]="userRegister.password"  required>
+                <label for="">contraseña</label>
+            </div>
+            <div class="register-row">
+                <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="userRegister.confirmPassword" required>
+                <label for="">confirmar contraseña</label>
+            </div>
+            <button type="submit">
+                Crear cuenta
+            </button>
         </form>
-    </div>
+    </div>   
 </div>
