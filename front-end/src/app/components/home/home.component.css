@@ -1,6 +1,6 @@
 .hero {
     height: 940px;
-    background-color: var(--blue);
+    background: linear-gradient(var(--blue), var(--purple));
 }
 .categories {
     display: grid;

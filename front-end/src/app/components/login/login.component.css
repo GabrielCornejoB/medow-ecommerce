@@ -1,0 +1,70 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 703px;
+    background: linear-gradient(var(--blue), var(--purple));
+}
+.form-container {
+    position: absolute;
+    width: 400px;
+    padding: 40px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+.form-container h1 {
+    margin: 0 0 30px 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+.form-container .login-row {
+    position: relative;
+}
+.form-container .login-row input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: transparent;
+}
+.form-container .login-row label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.form-container .login-row input:focus ~ label,
+.form-container .login-row input:valid ~ label {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+}
+.form-container form button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin-top: 20px;
+    color: white;
+    background: rgba(0,0,0,0.35);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.form-container form button:hover {
+    background: rgba(0,0,0,0.65);
+}
