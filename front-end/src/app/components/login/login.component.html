@@ -1,7 +1,7 @@
 <div class="login-wrapper">
     <div class="form-container">
         <h1>Iniciar sesión</h1>
-        <form (submit)="login()">
+        <form (submit)="login()" #loginForm="ngForm">
             <div class="login-row">
                 <input type="text" id="email" name="email" [(ngModel)]="userLogin.email" required>
                 <label>e-mail</label>
@@ -18,7 +18,7 @@
                 <p>Contraseña incorrecta</p>
                 <p (click)="incorrectPassword = !incorrectPassword"><span class="material-symbols-outlined">close</span></p>
             </div>
-            <button type="submit">
+            <button type="submit" [disabled]="loginForm.form.invalid">
                 Acceder
             </button>
             <div class="register-link">
